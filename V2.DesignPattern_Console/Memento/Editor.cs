@@ -2,7 +2,7 @@
 {
     public class Editor
     {
-        private string content { get; set; }
+        private string content;
 
         public string getContent() 
         {

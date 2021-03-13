@@ -3,7 +3,7 @@
     public class EditorState
     {
 
-        private string _Content { get; set; }
+        private string _Content;
 
         public EditorState(string content)
         {
