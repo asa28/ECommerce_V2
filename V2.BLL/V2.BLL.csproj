@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\V2.DAL\V2.DAL.csproj" />
   </ItemGroup>
 
 </Project>

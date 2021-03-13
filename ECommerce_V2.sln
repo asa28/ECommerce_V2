@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "V2.BLL", "V2.BLL\V2.BLL.csp
 		{03F17BFD-C778-4D71-94A9-661059D5544F} = {03F17BFD-C778-4D71-94A9-661059D5544F}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "V2.DesignPattern_Console", "V2.DesignPattern_Console\V2.DesignPattern_Console.csproj", "{7E94E57C-72D3-4FCD-8684-58945ABB0B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{EA5D6286-3444-4FFA-8A3C-8A0009703237}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA5D6286-3444-4FFA-8A3C-8A0009703237}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA5D6286-3444-4FFA-8A3C-8A0009703237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E94E57C-72D3-4FCD-8684-58945ABB0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E94E57C-72D3-4FCD-8684-58945ABB0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E94E57C-72D3-4FCD-8684-58945ABB0B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E94E57C-72D3-4FCD-8684-58945ABB0B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
