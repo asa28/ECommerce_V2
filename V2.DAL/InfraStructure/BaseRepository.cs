@@ -16,6 +16,7 @@ namespace V2.InfraStructure
             DbContext = _dbContext;
             DbSet = DbContext.Set<T>();
         }
+
         protected BaseRepository(DbContext dbContext)
         {
             DbContext = dbContext;

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using V2.DAL.DB_Context;
-using V2.DAL.Interfaces;
 using V2.DAL.Models;
 
 namespace V2.DAL.Repositories

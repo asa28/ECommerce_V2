@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using V2.DAL.InfraStructure;
 
-namespace V2.DAL.Interfaces
+namespace V2.DAL.Repositories
 {
     public interface IRepository<T> where T :BaseEntity
     {

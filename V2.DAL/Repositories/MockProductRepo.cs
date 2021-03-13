@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using V2.DAL.Interfaces;
 using V2.DAL.Models;
 
 namespace V2.DAL.Repositories

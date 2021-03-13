@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using V2.DAL.InfraStructure;
+using V2.InfraStructure;
 
 namespace V2.DAL.Interfaces
 {
-    public class SqlRepo<T> :IRepository<T> where T : BaseEntity
+    public class SqlRepo<T> : BaseRepository<T> where T : BaseEntity
     {
         public void Add(T p)
         {
