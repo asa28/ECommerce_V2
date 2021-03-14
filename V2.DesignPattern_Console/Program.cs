@@ -1,6 +1,9 @@
 ﻿using System;
 using V2.DesignPattern_Console.Mediator.Implementaion;
+using V2.DesignPattern_Console.Strategy;
+using V2.DesignPattern_Console.Strategy.Implementaion;
 using V2.DesignPatterns.Memento;
+using V2.DesignPattern_Console.Singletonn;
 
 namespace V2.DesignPattern_Console
 {
@@ -36,7 +39,6 @@ namespace V2.DesignPattern_Console
             //Console.WriteLine(editor.getContent());
             #endregion
 
-
             #region Mediator
 
             //var dialog = new ArticalDialougBox();
@@ -44,6 +46,24 @@ namespace V2.DesignPattern_Console
 
             #endregion
 
+            #region Startegy
+
+
+            //var image = new ImageStorage();
+            //image.store(FileName: "FileName_Ahmed", new JPEG_Compressor(), new B_W_Filter());
+            //image.store(FileName: "FileName_Ahmed", new PNG_Compressor(), new High_Contrast_Filter());
+
+
+            #endregion
+
+            #region Singleton
+
+            // error can't make new Singleton()
+            //var _singleton = new Singleton();
+            // only access is to get static one 
+            //var _singleton = Singleton.get_Instance();
+
+            #endregion
 
             Console.WriteLine("Hello World!");
         }
