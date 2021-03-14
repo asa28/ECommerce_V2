@@ -3,13 +3,13 @@ using V2.DAL.Repositories;
 
 namespace V2.BLL.Services
 {
-    public class ProductService
+    public class CompanyService
     {
-        private readonly ProductRepository _ProductRepo;
+        private readonly CompanyRepository _companyRepo;
 
-        public ProductService(ProductRepository productRepo)
+        public CompanyService(CompanyRepository companyRepo)
         {
-            _ProductRepo = productRepo;
+            _companyRepo = companyRepo;
         }
 
 
@@ -17,7 +17,7 @@ namespace V2.BLL.Services
 
 
         public Product Add()
-        {             
+        {
             return new Product();
         }
 

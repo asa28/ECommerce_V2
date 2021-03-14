@@ -1,62 +1,58 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using V2.DAL.InfraStructure;
+using System.Linq.Expressions;
+using V2.DAL.DB_Context;
 
-namespace V2.InfraStructure
+namespace V2.DAL.InfraStructure
 {
-    public abstract class BaseRepository<T> where T : BaseEntity
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+    {       
+        protected ECommerceDbContext RepositoryContext { get; set; }
+        public BaseRepository(ECommerceDbContext repositoryContext)
+        {
+            this.RepositoryContext = repositoryContext;
+        }
+        public IQueryable<T> FindAll()
+        {
+            return this.RepositoryContext.Set<T>().AsNoTracking();
+        }
+        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            return this.RepositoryContext.Set<T>().Where(expression).AsNoTracking();
+        }
+        public void FindById(int Id) 
+        {
+            this.RepositoryContext.Set<T>().Find(Id);
+        }
+        public IEnumerable<T> GetAllEntities() 
+        {
+            return this.RepositoryContext.Set<T>().OrderByDescending(T => T.CreatedDate).ToList();
+        }
+        public void Create(T entity)
+        {
+            this.RepositoryContext.Set<T>().Add(entity);
+        }
+        public void Update(T entity)
+        {
+            this.RepositoryContext.Set<T>().Update(entity);
+        }
+        public void Delete(T entity)
+        {
+            this.RepositoryContext.Set<T>().Remove(entity);
+        }
+
+    }
+
+    public interface IBaseRepository<T> where T : BaseEntity
     {
-        private DbContext _dbContext;
-        public DbContext DbContext { get; set; }
-        public IDbSet<T> DbSet { get; set; }
-
-        protected BaseRepository()
-        {
-            DbContext = _dbContext;
-            DbSet = DbContext.Set<T>();
-        }
-
-        protected BaseRepository(DbContext dbContext)
-        {
-            DbContext = dbContext;
-            DbSet = DbContext.Set<T>();
-        }
-
-        public virtual void Create(T entity)
-        {
-            DbSet.Add(entity);
-        }
-
-        public virtual void Update(T entity)
-        {
-            DbSet.Attach(entity);
-            DbContext.Entry(entity).State = EntityState.Modified;
-        }
-
-        public virtual T GetById(int id)
-        {
-            return DbSet.Find(id);
-        }
-
-        public virtual IEnumerable<T> GetAll()
-        {
-            return DbSet.AsNoTracking().ToList();
-        }
-
-        public virtual void Delete(T entity)
-        {
-            DbSet.Remove(entity);
-        }
-
-        public int Count()
-        {
-            return DbSet.Count();
-        }
-
-        public void SaveChanges()
-        {
-            DbContext.SaveChanges();
-        }
+       IQueryable<T> FindAll();
+       IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression);
+       void FindById(int Id);
+       IEnumerable<T> GetAllEntities();
+       void Create(T entity);
+       void Update(T entity);
+       void Delete(T entity);
     }
 }

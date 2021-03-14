@@ -1,21 +1,21 @@
-﻿using V2.DAL.Interfaces;
-using V2.DAL.Models;
+﻿using V2.DAL.Models;
+using V2.DAL.Repositories;
 
 namespace V2.BLL.Services
 {
     public class UserService
     {
-        private readonly SqlRepo<User> _UserRepo;
+        private readonly UserRepository _UserRepo;
 
-        public UserService(SqlRepo<User> userRepo)
+        public UserService(UserRepository userRepo)
         {
             _UserRepo = userRepo;
         }
 
+        // implement Business Logic 
+
         public User Add()
         {
-            // implement Business Logic 
-
             return new User();
         }
     }
